@@ -29,3 +29,7 @@ docente_na_escola(D, E):-docente(UC, D),uc(C, UC, _),curso(C, E).
 % há ucs sem inscritos? em que cursos?
 
 sem_incritos(E):-curso(C, E),uc(C, UC,_),incrito(UC, _).
+
+% saber se um estudante percente a uma instituição
+
+aluno_inst(E, I):-inscrito(UC, E),uc(Curso, UC, _),curso(Curso, Escola),escola(I, Escola)
