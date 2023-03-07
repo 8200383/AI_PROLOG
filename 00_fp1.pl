@@ -33,3 +33,7 @@ sem_incritos(E):-curso(C, E),uc(C, UC,_),incrito(UC, _).
 % saber se um estudante percente a uma instituição
 
 aluno_inst(E, I):-inscrito(UC, E),uc(Curso, UC, _),curso(Curso, Escola),escola(I, Escola)
+
+% há ucs sem inscritos? em que cursos?
+
+sem_inscritos(UC, C):-uc(C, UC, Ano),not(inscrito(UC, Aluno)).
